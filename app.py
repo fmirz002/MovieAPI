@@ -24,5 +24,7 @@ class Movie(Resource):
         data = r.json()  
         return data, 200
 
+api.add_resource(Movie, "/movie/<string:id>")
+
 if __name__ == "__main__":
   app.run()
