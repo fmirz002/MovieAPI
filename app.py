@@ -19,7 +19,7 @@ class Movie(Resource):
         print(id)
         URL = 'https://api.themoviedb.org/3/movie/' + id
         PARAMS = {'api_key': os.environ['MOVIE_API_KEY'], 'language':'en-US'}
-        print(params)
+        print(PARAMS)
         r = requests.get(url = URL, params = PARAMS)
         data = r.json()  
         return data, 200
