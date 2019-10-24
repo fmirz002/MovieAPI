@@ -1,5 +1,7 @@
-from flask import Flask
-from flask_restful import Api
+from flask import Flask, request
+from flask_restful import Resource, Api
+import requests
+import json
 import os
 
 app = Flask(__name__)
