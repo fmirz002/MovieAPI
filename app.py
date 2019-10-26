@@ -12,7 +12,13 @@ class Search(Resource):
         if 'query' not in request.args:
             return {message: "Incorrectly formatted request"}, 400
         query = request.args['query']
-        PARAMS = {'api_key':os.environ['MOVIE_API_KEY'], 'language':'en-US', 'page':'1', 'query':query}
+        page = 1
+        if page in request.args:
+            page = request.args['page']
+            if page.isdigit() == False:
+                return {message: "Incorrectly formatted request"}, 400
+
+        PARAMS = {'api_key':os.environ['MOVIE_API_KEY'], 'language':'en-US', 'page':page, 'query':query}
         r = requests.get(url = 'https://api.themoviedb.org/3/search/movie', params = PARAMS)
         data = r.json()
         return data, 200
