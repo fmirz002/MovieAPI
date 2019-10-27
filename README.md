@@ -6,12 +6,12 @@ You will need to request an API key from there and add it as the Heroku Environm
 
 Valid Uses:
 
-/search?query={SEARCH_TERM}&page=PAGE_NUM
+    /search?query={SEARCH_TERM}&page=PAGE_NUM
 
 This will default to page 1
 
-/movie/${ID_NUMBER}
+    /movie/${ID_NUMBER}
 
-/show/${ID_NUMBER}
+    /show/${ID_NUMBER}
 
 ID numbers are the ID numbers used by themoviedb API
